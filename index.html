@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SD CC - Savitri Devi Computer Classes, Ghaziabad. Best computer institute offering DCA, ADCA, Tally, Web Design, Programming, and 25+ courses.">
+    <title>SD CC - Best Computer Institute in Ghaziabad</title>
+    
+    <link rel="shortcut icon" href="https://z-cdn-media.chatglm.cn/files/f0be021c-ab85-4c6b-bf75-5fe1286ec379.png?auth_key=1877575880-417bb9de6daf4523826d872258822e60-0-1474b5786a31e7b795ccf4290034d989" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gray: #64748b;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+            --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 80px 0; }
+        .text-center { text-align: center; }
+        
+        .section-header { margin-bottom: 50px; text-align: center; }
+
+        .section-header h2 {
+            font-size: 2.5rem; font-weight: 700; margin-bottom: 15px;
+            background: var(--gradient); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .section-header p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        .btn {
+            display: inline-block; padding: 12px 28px; border-radius: 50px;
+            font-weight: 600; transition: all 0.3s ease; cursor: pointer;
+            border: none; font-size: 0.95rem; font-family: 'Outfit', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--gradient); color: var(--white);
+            box-shadow: 0 4px 15px rgba(37,99,235,0.3);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37,99,235,0.4); }
+
+        .btn-outline { background: transparent; border: 2px solid var(--white); color: var(--white); }
+        .btn-outline:hover { background: var(--white); color: var(--primary); }
+
+        .btn-whatsapp {
+            background: #25d366; color: white;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+        }
+        .btn-whatsapp:hover { background: #20bd5a; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37,211,102,0.4); }
+
+        /* --- Logo Popup --- */
+        .logo-popup-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.85); z-index: 9999;
+            display: flex; justify-content: center; align-items: center; padding: 20px;
+            animation: fadeInPopup 0.5s ease-out;
+        }
+        .popup-content {
+            background: var(--white); padding: 40px; border-radius: 20px;
+            text-align: center; box-shadow: 0 0 40px rgba(37,99,235,0.2);
+            max-width: 420px; width: 100%; position: relative;
+        }
+        .popup-content img { max-width: 180px; height: auto; margin-bottom: 20px; }
+        .popup-cancel-btn {
+            position: absolute; top: -15px; right: -15px; background: var(--white);
+            color: #ff4757; border: none; width: 40px; height: 40px; border-radius: 50%;
+            font-size: 18px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            display: flex; align-items: center; justify-content: center; transition: transform 0.2s;
+        }
+        .popup-cancel-btn:hover { transform: scale(1.1); }
+        .close-btn-main {
+            margin-top: 10px; background: #ff4757; color: white; border: none;
+            padding: 12px 35px; border-radius: 50px; font-size: 1rem; cursor: pointer;
+            font-weight: 600; font-family: 'Outfit', sans-serif; transition: background 0.3s;
+        }
+        .close-btn-main:hover { background: #e84057; }
+        .hide-popup { display: none !important; }
+
+        @keyframes fadeInPopup {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px); box-shadow: var(--shadow-sm);
+            padding: 8px 0; transition: all 0.3s;
+        }
+        header.scrolled { padding: 5px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+        nav { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo img { height: 55px; width: auto; object-fit: contain; }
+        .logo-text { font-size: 1.4rem; font-weight: 800; color: var(--primary); line-height: 1; }
+        .logo-subtext {
+            display: block; font-size: 0.65rem; font-weight: 500; color: var(--gray);
+            text-transform: uppercase; letter-spacing: 1.5px; margin-top: 2px;
+        }
+
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links a {
+            font-weight: 500; color: var(--dark); position: relative;
+            font-size: 0.95rem; transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -5px; left: 0; background: var(--primary); transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { margin-left: 10px; }
+
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); padding: 5px; }
+
+        /* --- Hero --- */
+        .hero {
+            padding-top: 130px; padding-bottom: 80px;
+            background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 50%, #ffffff 100%);
+            position: relative; overflow: hidden; min-height: 80vh; display: flex; align-items: center;
+        }
+        .blob { position: absolute; border-radius: 50%; filter: blur(80px); z-index: 0; opacity: 0.3; }
+        .blob-1 { width: 350px; height: 350px; background: var(--secondary); top: -80px; right: -80px; }
+        .blob-2 { width: 450px; height: 450px; background: var(--primary); bottom: -120px; left: -120px; }
+
+        .hero-content {
+            position: relative; z-index: 1; display: flex;
+            align-items: center; justify-content: space-between; gap: 50px; width: 100%;
+        }
+        .hero-text { flex: 1; }
+        .hero-text h1 { font-size: 3.2rem; line-height: 1.2; margin-bottom: 20px; color: var(--dark); }
+        .hero-text span {
+            background: var(--gradient); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-text p { font-size: 1.15rem; color: var(--gray); margin-bottom: 35px; max-width: 500px; line-height: 1.7; }
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        .hero-img {
+            flex: 0.9; position: relative; display: flex;
+            justify-content: center; align-items: center;
+        }
+        .hero-img img {
+            max-width: 320px; width: 100%; object-fit: contain;
+            filter: drop-shadow(0 20px 40px rgba(37,99,235,0.15));
+            animation: pulse-glow 4s infinite ease-in-out;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 20px 40px rgba(37,99,235,0.15)); }
+            50% { transform: scale(1.03); filter: drop-shadow(0 25px 50px rgba(37,99,235,0.25)); }
+        }
+
+        /* --- Stats --- */
+        .stats-section {
+            background: var(--dark); color: var(--white); padding: 60px 0;
+            position: relative; z-index: 2; margin-top: -40px;
+        }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+        .stat-item h3 {
+            font-size: 2.8rem; font-weight: 700; margin-bottom: 8px;
+            background: var(--gradient); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .stat-item p { color: #94a3b8; font-size: 1rem; }
+
+        /* --- Filter Tabs --- */
+        .filter-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 40px; }
+        .filter-tab {
+            padding: 8px 20px; border-radius: 50px; border: 2px solid #e2e8f0;
+            background: var(--white); color: var(--gray); font-weight: 600;
+            font-size: 0.85rem; cursor: pointer; transition: all 0.3s; font-family: 'Outfit', sans-serif;
+        }
+        .filter-tab:hover, .filter-tab.active { border-color: var(--primary); background: var(--primary); color: var(--white); }
+
+        /* --- Course Cards --- */
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+
+        .course-card {
+            background: var(--white); border-radius: 16px; overflow: hidden;
+            box-shadow: var(--shadow-sm); transition: all 0.4s ease;
+            border: 1px solid #e2e8f0; display: flex; flex-direction: column; height: 100%;
+        }
+        .course-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); border-color: transparent; }
+        .course-card.hidden { display: none; }
+
+        .card-img { height: 160px; overflow: hidden; position: relative; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .course-card:hover .card-img img { transform: scale(1.08); }
+
+        .price-tag {
+            position: absolute; top: 12px; right: 12px; background: var(--white);
+            padding: 5px 12px; border-radius: 20px; font-weight: 700; color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-size: 0.85rem;
+        }
+
+        .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .tag { font-size: 0.7rem; padding: 4px 10px; background: #eff6ff; color: var(--primary); border-radius: 6px; font-weight: 600; }
+        .course-title { font-size: 1.05rem; margin-bottom: 10px; font-weight: 700; line-height: 1.4; color: var(--dark); }
+        .course-meta {
+            display: flex; justify-content: space-between; color: var(--gray);
+            margin-bottom: 12px; font-size: 0.85rem; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9;
+        }
+        .course-meta i { color: var(--accent); margin-right: 5px; }
+        .rating { color: #f59e0b; font-weight: 600; }
+        .course-desc { color: #64748b; font-size: 0.85rem; margin-bottom: 18px; line-height: 1.6; flex-grow: 1; }
+        .course-btn { margin-top: auto; }
+
+        /* ============================================ */
+        /* --- COURSE DETAIL MODAL (NEW) --- */
+        /* ============================================ */
+        .course-modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8); z-index: 10000;
+            display: none; justify-content: center; align-items: flex-start;
+            padding: 30px 15px; overflow-y: auto;
+            animation: fadeInPopup 0.3s ease-out;
+        }
+        .course-modal-overlay.open { display: flex; }
+
+        .course-modal {
+            background: var(--white); border-radius: 20px;
+            max-width: 700px; width: 100%; position: relative;
+            margin: auto 0; box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+            animation: modalSlideUp 0.4s ease-out;
+        }
+
+        @keyframes modalSlideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-close {
+            position: absolute; top: 15px; right: 15px; background: #f1f5f9;
+            color: #475569; border: none; width: 36px; height: 36px; border-radius: 50%;
+            font-size: 16px; cursor: pointer; display: flex; align-items: center;
+            justify-content: center; transition: all 0.2s; z-index: 5;
+        }
+        .modal-close:hover { background: #ff4757; color: white; transform: scale(1.1); }
+
+        .modal-header {
+            background: var(--gradient); padding: 30px 30px 25px; border-radius: 20px 20px 0 0;
+            position: relative; overflow: hidden;
+        }
+        .modal-header::after {
+            content: ''; position: absolute; top: -50px; right: -50px;
+            width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 50%;
+        }
+        .modal-header h2 { color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+        .modal-header-badges { display: flex; gap: 10px; flex-wrap: wrap; }
+        .modal-badge {
+            background: rgba(255,255,255,0.2); color: white; padding: 5px 14px;
+            border-radius: 20px; font-size: 0.8rem; font-weight: 600;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-body { padding: 30px; }
+
+        .modal-info-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px;
+        }
+        .modal-info-box {
+            background: var(--light); padding: 15px; border-radius: 12px; text-align: center;
+        }
+        .modal-info-box i { font-size: 1.3rem; color: var(--primary); margin-bottom: 6px; display: block; }
+        .modal-info-box .label { font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; }
+        .modal-info-box .value { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-top: 3px; }
+
+        .modal-section-title {
+            font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 12px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .modal-section-title i { color: var(--primary); font-size: 0.9rem; }
+
+        .syllabus-list { margin-bottom: 25px; }
+        .syllabus-list li {
+            padding: 8px 0; border-bottom: 1px solid #f1f5f9;
+            display: flex; align-items: flex-start; gap: 10px;
+            font-size: 0.9rem; color: #475569; line-height: 1.5;
+        }
+        .syllabus-list li:last-child { border-bottom: none; }
+        .syllabus-list li i { color: var(--secondary); margin-top: 4px; font-size: 0.75rem; flex-shrink: 0; }
+
+        .who-join-box {
+            background: linear-gradient(135deg, #eff6ff, #f0f9ff);
+            padding: 18px; border-radius: 12px; margin-bottom: 25px;
+            border-left: 4px solid var(--primary);
+        }
+        .who-join-box p { font-size: 0.9rem; color: #475569; line-height: 1.6; }
+
+        /* --- Enquiry Form inside Modal --- */
+        .enquiry-form-section {
+            background: var(--light); padding: 25px; border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+        .enquiry-form-section .modal-section-title { margin-bottom: 18px; }
+
+        .enquiry-form { display: flex; flex-direction: column; gap: 14px; }
+        .enquiry-form input {
+            width: 100%; padding: 13px 16px; border: 2px solid #e2e8f0;
+            border-radius: 12px; font-size: 0.95rem; font-family: 'Outfit', sans-serif;
+            transition: border-color 0.3s; background: var(--white);
+        }
+        .enquiry-form input:focus { outline: none; border-color: var(--primary); }
+        .enquiry-form input::placeholder { color: #94a3b8; }
+
+        .enquiry-btns { display: flex; gap: 12px; margin-top: 5px; }
+        .enquiry-btns .btn { flex: 1; text-align: center; padding: 14px; font-size: 0.95rem; }
+
+        .form-error { color: #ef4444; font-size: 0.8rem; display: none; margin-top: -8px; }
+        .form-error.show { display: block; }
+
+        /* --- Gallery --- */
+        .gallery-section { background-color: var(--light); overflow: hidden; }
+        .slider-container { width: 100%; overflow: hidden; padding: 20px 0; }
+        .slider-track {
+            display: flex; width: calc((350px + 30px) * 14);
+            animation: scroll 50s linear infinite;
+        }
+        .slider-track:hover { animation-play-state: paused; }
+        .slide {
+            width: 350px; height: 250px; margin: 0 15px; border-radius: 16px;
+            overflow: hidden; box-shadow: var(--shadow-sm); flex-shrink: 0; position: relative;
+        }
+        .slide img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+        .slide:hover img { transform: scale(1.1); }
+        .slide-content {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px 15px 15px; opacity: 0; transition: opacity 0.3s;
+        }
+        .slide:hover .slide-content { opacity: 1; }
+        .slide-content h4 { color: white; font-size: 1rem; font-weight: 600; }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-2660px)); }
+        }
+
+        /* --- Testimonials --- */
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testimonial-card {
+            background: var(--white); padding: 30px; border-radius: 16px;
+            border: 1px solid #e2e8f0; position: relative; transition: all 0.3s;
+        }
+        .testimonial-card:hover { box-shadow: var(--shadow-lg); border-color: transparent; }
+        .testimonial-card::before {
+            content: '\f10d'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+            position: absolute; top: 20px; right: 20px; font-size: 3rem; color: #f1f5f9;
+        }
+        .testimonial-card p { color: #475569; line-height: 1.7; font-size: 0.95rem; }
+        .student-info { display: flex; align-items: center; gap: 15px; margin-top: 20px; }
+        .student-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #e2e8f0; }
+        .student-info h4 { font-size: 1rem; color: var(--dark); }
+        .student-info small { color: var(--gray); }
+
+        /* --- Footer --- */
+        footer { background: var(--dark); color: #94a3b8; padding: 70px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 1.3fr 0.8fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+        .footer-col h4 { color: var(--white); margin-bottom: 25px; font-size: 1.15rem; }
+        .footer-col ul li { margin-bottom: 15px; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+        .footer-col ul li a { color: inherit; transition: color 0.3s; display: flex; align-items: center; gap: 10px; }
+        .footer-col ul li a:hover { color: var(--secondary); }
+        .footer-col i { margin-top: 4px; }
+        .footer-logo-img { height: 80px; width: auto; margin-bottom: 15px; filter: brightness(0) invert(1); }
+
+        .social-links { display: flex; gap: 12px; margin-top: 20px; }
+        .social-links a {
+            width: 40px; height: 40px; border-radius: 10px;
+            background: rgba(255,255,255,0.08); display: flex; align-items: center;
+            justify-content: center; color: #94a3b8; transition: all 0.3s; font-size: 1.1rem;
+        }
+        .social-links a:hover { background: var(--primary); color: var(--white); transform: translateY(-3px); }
+
+        .newsletter-form { display: flex; margin-top: 15px; border-radius: 8px; overflow: hidden; }
+        .newsletter-form input {
+            padding: 12px 15px; border: none; outline: none; flex: 1;
+            font-family: 'Outfit', sans-serif; font-size: 0.9rem;
+            background: rgba(255,255,255,0.08); color: var(--white);
+        }
+        .newsletter-form input::placeholder { color: #64748b; }
+        .newsletter-form button {
+            padding: 12px 18px; background: var(--primary); color: white;
+            border: none; cursor: pointer; transition: background 0.3s; font-size: 1rem;
+        }
+        .newsletter-form button:hover { background: var(--primary-dark); }
+
+        /* --- Toast --- */
+        .toast {
+            position: fixed; bottom: 100px; left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #10b981; color: white; padding: 14px 28px;
+            border-radius: 12px; font-weight: 600; font-size: 0.95rem;
+            box-shadow: 0 10px 30px rgba(16,185,129,0.3); z-index: 11000;
+            opacity: 0; transition: all 0.4s ease; pointer-events: none;
+        }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        .toast.error { background: #ef4444; box-shadow: 0 10px 30px rgba(239,68,68,0.3); }
+
+        /* --- WhatsApp Float --- */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+            background: #25d366; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; color: white; font-size: 1.8rem;
+            box-shadow: 0 6px 20px rgba(37,211,102,0.4); z-index: 900;
+            transition: all 0.3s; animation: whatsapp-pulse 2s infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
+        @keyframes whatsapp-pulse {
+            0%, 100% { box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
+            50% { box-shadow: 0 6px 30px rgba(37,211,102,0.6), 0 0 0 10px rgba(37,211,102,0.1); }
+        }
+
+        /* --- Back to Top --- */
+        .back-to-top {
+            position: fixed; bottom: 100px; right: 35px; width: 45px; height: 45px;
+            background: var(--primary); border-radius: 12px; display: flex;
+            align-items: center; justify-content: center; color: white; font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(37,99,235,0.3); z-index: 900; cursor: pointer;
+            opacity: 0; visibility: hidden; transition: all 0.3s; border: none;
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { transform: translateY(-3px); background: var(--primary-dark); }
+
+        /* --- Reveal --- */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* --- Responsive --- */
+        @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 992px) {
+            .hero-content { flex-direction: column-reverse; text-align: center; }
+            .hero-text h1 { font-size: 2.4rem; }
+            .hero-text p { margin: 0 auto 30px; }
+            .hero-buttons { justify-content: center; }
+            .hero-img img { max-width: 250px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .section-header h2 { font-size: 2rem; }
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; width: 100%;
+                background: var(--white); flex-direction: column; padding: 20px;
+                text-align: center; box-shadow: var(--shadow-lg); gap: 15px;
+            }
+            .nav-links.active { display: flex; }
+            .nav-cta { margin-left: 0; }
+            .menu-toggle { display: block; }
+            .logo img { height: 40px; }
+            .logo-text { font-size: 1.1rem; }
+            .slider-track { animation-duration: 25s; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .filter-tabs { gap: 8px; }
+            .filter-tab { padding: 6px 14px; font-size: 0.8rem; }
+            .modal-info-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+            .modal-info-box { padding: 12px 8px; }
+            .modal-info-box .value { font-size: 0.95rem; }
+            .modal-header { padding: 25px 20px 20px; }
+            .modal-header h2 { font-size: 1.25rem; }
+            .modal-body { padding: 20px; }
+            .enquiry-btns { flex-direction: column; }
+        }
+        @media (max-width: 480px) {
+            .hero { min-height: auto; padding-top: 110px; padding-bottom: 60px; }
+            .hero-text h1 { font-size: 1.9rem; }
+            .courses-grid { grid-template-columns: 1fr; }
+            .stat-item h3 { font-size: 2.2rem; }
+            .slide { width: 280px; height: 200px; }
+            .slider-track { width: calc((280px + 30px) * 14); }
+            @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-2170px)); } }
+            .modal-info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOGO POPUP -->
+    <div id="logoPopup" class="logo-popup-overlay">
+        <div class="popup-content">
+            <button id="closePopupX" class="popup-cancel-btn" aria-label="Close"><i class="fas fa-times"></i></button>
+            <img src="https://z-cdn-media.chatglm.cn/files/f0be021c-ab85-4c6b-bf75-5fe1286ec379.png?auth_key=1877575880-417bb9de6daf4523826d872258822e60-0-1474b5786a31e7b795ccf4290034d989" alt="SD CC Logo">
+            <h3 style="font-size:1.3rem;color:var(--primary);margin-bottom:8px;">Welcome to SD CC</h3>
+            <p style="color:#666;margin-bottom:20px;line-height:1.6;">Savitri Devi Computer Classes<br>Build Your Career in IT</p>
+            <button id="closePopupMain" class="close-btn-main">Explore Courses</button>
+        </div>
+    </div>
+
+    <!-- COURSE DETAIL MODAL -->
+    <div class="course-modal-overlay" id="courseModal">
+        <div class="course-modal">
+            <button class="modal-close" id="modalClose" aria-label="Close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Course Name</h2>
+                <div class="modal-header-badges" id="modalBadges"></div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-info-grid" id="modalInfoGrid"></div>
+
+                <div class="modal-section-title"><i class="fas fa-book-open"></i> Course Syllabus</div>
+                <ul class="syllabus-list" id="modalSyllabus"></ul>
+
+                <div class="modal-section-title"><i class="fas fa-user-check"></i> Who Should Join?</div>
+                <div class="who-join-box"><p id="modalWhoJoin"></p></div>
+
+                <!-- ENQUIRY FORM -->
+                <div class="enquiry-form-section">
+                    <div class="modal-section-title"><i class="fas fa-paper-plane"></i> Enquire Now</div>
+                    <form class="enquiry-form" id="enquiryForm">
+                        <input type="text" id="eqName" placeholder="Enter Your Full Name" required>
+                        <div class="form-error" id="nameError">Please enter your name</div>
+                        <input type="tel" id="eqPhone" placeholder="Enter Your Contact Number" required pattern="[0-9]{10}">
+                        <div class="form-error" id="phoneError">Please enter valid 10-digit number</div>
+                        <input type="email" id="eqEmail" placeholder="Enter Your Email ID" required>
+                        <div class="form-error" id="emailError">Please enter valid email</div>
+                        <div class="enquiry-btns">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit Enquiry</button>
+                            <a href="#" class="btn btn-whatsapp" id="eqWhatsApp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="https://z-cdn-media.chatglm.cn/files/f0be021c-ab85-4c6b-bf75-5fe1286ec379.png?auth_key=1877575880-417bb9de6daf4523826d872258822e60-0-1474b5786a31e7b795ccf4290034d989" alt="SD CC Logo">
+                    <div><span class="logo-text">SD CC</span><span class="logo-subtext">Computer Classes</span></div>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="nav-cta"><a href="#contact" class="btn btn-primary">Join Now</a></li>
+                </ul>
+                <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text reveal">
+                    <h1>Build Your Career in <span>IT</span> with Practical Skills</h1>
+                    <p>Savitri Devi Computer Classes provides industry-standard training. From basic computers to advanced programming, we shape your future.</p>
+                    <div class="hero-buttons">
+                        <a href="#courses" class="btn btn-primary">Explore Courses</a>
+                        <a href="https://wa.me/918766374979?text=Hi%2C%20I%20want%20to%20join%20SD%20CC" class="btn btn-outline" style="background:var(--dark);border:none;" target="_blank">Free Demo</a>
+                    </div>
+                </div>
+                <div class="hero-img reveal">
+                    <img src="https://z-cdn-media.chatglm.cn/files/f0be021c-ab85-4c6b-bf75-5fe1286ec379.png?auth_key=1877575880-417bb9de6daf4523826d872258822e60-0-1474b5786a31e7b795ccf4290034d989" alt="SD CC Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal"><h3 class="counter" data-target="10">0</h3><p>Years Experience</p></div>
+                <div class="stat-item reveal"><h3 class="counter" data-target="5000">0</h3><p>Students Trained</p></div>
+                <div class="stat-item reveal"><h3 class="counter" data-target="25">0</h3><p>Expert Faculties</p></div>
+                <div class="stat-item reveal"><h3 class="counter" data-target="98">0</h3><p>Success Rate (%)</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses -->
+    <section class="section-padding" id="courses">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>All Computer Courses</h2>
+                <p>Explore our wide range of diploma, certificate, and skill-based courses.</p>
+            </div>
+            <div class="filter-tabs reveal">
+                <button class="filter-tab active" data-filter="all">All Courses</button>
+                <button class="filter-tab" data-filter="diploma">Diploma</button>
+                <button class="filter-tab" data-filter="certificate">Certificate</button>
+                <button class="filter-tab" data-filter="coding">Coding</button>
+                <button class="filter-tab" data-filter="design">Design</button>
+                <button class="filter-tab" data-filter="hardware">Hardware</button>
+                <button class="filter-tab" data-filter="government">Government</button>
+                <button class="filter-tab" data-filter="typing">Typing</button>
+            </div>
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Cards will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section section-padding" id="gallery">
+        <div class="container">
+            <div class="section-header reveal"><h2>Our Gallery</h2><p>A continuous glimpse of our campus life and events.</p></div>
+        </div>
+        <div class="slider-container">
+            <div class="slider-track">
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/be769ff0-4210-4788-81e4-a9a05f5be005.jpeg?auth_key=1877569261-9c855ee21f9a48faa3709270a4ff3161-0-ebf050751422028506b280ea71d0ccd4" alt="Interior" loading="lazy"><div class="slide-content"><h4>Institute Interior</h4></div></div>
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/cce0cd2b-9ea3-43dd-8a17-dd12e145a3da.jpeg?auth_key=1877569261-c924cf0a49884b0db776df56e22d06a8-0-65eb8fce7da3bf6a6ae2f67e341c1750" alt="Event" loading="lazy"><div class="slide-content"><h4>Cultural Event</h4></div></div>
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/331a9bbe-6737-4f86-9548-88c02af4ea56.jpeg?auth_key=1877569261-dbebbb0f8bbc4153bc0b61de06529fb8-0-fe921b3387f4b5e5a2c0e81f79d30fff" alt="Building" loading="lazy"><div class="slide-content"><h4>Main Building</h4></div></div>
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/f05140c5-cd9b-4b59-8e54-0445e5c579ae.jpeg?auth_key=1877569261-b8adae7d37974121998a93ad2bb5059f-0-ada3db7da37a8b192371031281a95aea" alt="Lab" loading="lazy"><div class="slide-content"><h4>Practical Session</h4></div></div>
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/5caa2388-6c67-47f7-99a2-72b18212b38c.jpeg?auth_key=1877569261-5a4e4c373fc341bf802cb17244236631-0-5f5d2a8f5da4c592bdedbee1d0ebea00" alt="Classroom" loading="lazy"><div class="slide-content"><h4>Classroom Training</h4></div></div>
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/3dc52681-9ccc-4f89-97af-f9753b25bae0.jpeg?auth_key=1877569261-53f1b49d345f485dbc5633570153d6a0-0-f369bcc905f3ad1fcdb412f6d86a8d4f" alt="Interaction" loading="lazy"><div class="slide-content"><h4>Doubt Solving</h4></div></div>
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/e440ff26-d71e-4818-85ca-ab6c8ea7e7b7.jpeg?auth_key=1877569261-270ff2e6cf8c4d819678f83a84973e3d-0-21acf56e33020fc89bf051ad7771ce86" alt="Lab 2" loading="lazy"><div class="slide-content"><h4>Advanced Lab</h4></div></div>
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/be769ff0-4210-4788-81e4-a9a05f5be005.jpeg?auth_key=1877569261-9c855ee21f9a48faa3709270a4ff3161-0-ebf050751422028506b280ea71d0ccd4" alt="Interior" loading="lazy"><div class="slide-content"><h4>Institute Interior</h4></div></div>
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/cce0cd2b-9ea3-43dd-8a17-dd12e145a3da.jpeg?auth_key=1877569261-c924cf0a49884b0db776df56e22d06a8-0-65eb8fce7da3bf6a6ae2f67e341c1750" alt="Event" loading="lazy"><div class="slide-content"><h4>Cultural Event</h4></div></div>
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/331a9bbe-6737-4f86-9548-88c02af4ea56.jpeg?auth_key=1877569261-dbebbb0f8bbc4153bc0b61de06529fb8-0-fe921b3387f4b5e5a2c0e81f79d30fff" alt="Building" loading="lazy"><div class="slide-content"><h4>Main Building</h4></div></div>
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/f05140c5-cd9b-4b59-8e54-0445e5c579ae.jpeg?auth_key=1877569261-b8adae7d37974121998a93ad2bb5059f-0-ada3db7da37a8b192371031281a95aea" alt="Lab" loading="lazy"><div class="slide-content"><h4>Practical Session</h4></div></div>
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/5caa2388-6c67-47f7-99a2-72b18212b38c.jpeg?auth_key=1877569261-5a4e4c373fc341bf802cb17244236631-0-5f5d2a8f5da4c592bdedbee1d0ebea00" alt="Classroom" loading="lazy"><div class="slide-content"><h4>Classroom Training</h4></div></div>
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/3dc52681-9ccc-4f89-97af-f9753b25bae0.jpeg?auth_key=1877569261-53f1b49d345f485dbc5633570153d6a0-0-f369bcc905f3ad1fcdb412f6d86a8d4f" alt="Interaction" loading="lazy"><div class="slide-content"><h4>Doubt Solving</h4></div></div>
+                <div class="slide"><img src="https://z-cdn-media.chatglm.cn/files/e440ff26-d71e-4818-85ca-ab6c8ea7e7b7.jpeg?auth_key=1877569261-270ff2e6cf8c4d819678f83a84973e3d-0-21acf56e33020fc89bf051ad7771ce86" alt="Lab 2" loading="lazy"><div class="slide-content"><h4>Advanced Lab</h4></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-padding" id="testimonials" style="background:var(--light);">
+        <div class="container">
+            <div class="section-header reveal"><h2>Student Success Stories</h2><p>Hear what our students have to say about their experience.</p></div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card reveal">
+                    <p>"SD CC changed my life. I joined the Web Design course and within 2 months I got my first freelance project. The teachers are very supportive."</p>
+                    <div class="student-info">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" class="student-img" alt="Rahul">
+                        <div><h4>Rahul Sharma</h4><small style="color:var(--gray)">Web Developer</small></div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <p>"The practical approach here is amazing. I learned Tally Prime from scratch and now I manage accounts for a local firm confidently."</p>
+                    <div class="student-info">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" class="student-img" alt="Priya">
+                        <div><h4>Priya Singh</h4><small style="color:var(--gray)">Accountant</small></div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <p>"Best computer institute in the city. Environment is good and study material is very easy to understand. Highly recommended!"</p>
+                    <div class="student-info">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" class="student-img" alt="Amit">
+                        <div><h4>Amit Verma</h4><small style="color:var(--gray)">DCA Student</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://z-cdn-media.chatglm.cn/files/f0be021c-ab85-4c6b-bf75-5fe1286ec379.png?auth_key=1877575880-417bb9de6daf4523826d872258822e60-0-1474b5786a31e7b795ccf4290034d989" class="footer-logo-img" alt="SD CC Logo">
+                    <p style="line-height:1.7;">Savitri Devi Computer Classes is dedicated to empowering students with digital literacy and technical skills for a better future.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/918766374979" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-chevron-right" style="font-size:0.7rem;"></i> Home</a></li>
+                        <li><a href="#courses"><i class="fas fa-chevron-right" style="font-size:0.7rem;"></i> Courses</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right" style="font-size:0.7rem;"></i> Gallery</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right" style="font-size:0.7rem;"></i> Reviews</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right" style="font-size:0.7rem;"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> c/62 Panchsheel Bohora Road, Ghaziabad 201005</li>
+                        <li><a href="tel:+918766374979"><i class="fas fa-phone"></i> +91 8766374979</a></li>
+                        <li><a href="mailto:sd.com.classes@gmail.com"><i class="fas fa-envelope"></i> sd.com.classes@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for updates and offers.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your Email" required id="newsletterEmail">
+                        <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center" style="border-top:1px solid #334155;padding-top:25px;">
+                <p>&copy; 2025 Savitri Devi Computer Classes. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918766374979?text=Hi%2C%20I%20want%20to%20know%20about%20SD%20CC%20courses" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <div class="toast" id="toast"></div>
+
+    <script>
+    // ========================================
+    // ALL 28 COURSES DATA (Full Details)
+    // ========================================
+    const coursesData = [
+        {
+            id: 1, name: "DCA (Diploma in Computer Application)", price: "₹3,000", duration: "6 Months", category: "diploma", tag: "Diploma", students: "1000+", rating: "4.8",
+            img: "https://gregarious-klepon-be0467.netlify.app/assets/images/DCA.webp",
+            shortDesc: "Complete guide to Microsoft Office suite and computer fundamentals.",
+            syllabus: [
+                "Computer Fundamentals & Operating System (Windows)",
+                "MS Word — Document creation, formatting, mail merge",
+                "MS Excel — Formulas, Functions, Charts, Data sorting",
+                "MS PowerPoint — Professional presentations",
+                "MS Access — Database creation & management",
+                "Internet & Email — Browsing, Gmail, Online forms",
+                "Hindi & English Typing Practice"
+            ],
+            whoJoin: "Students who want to learn basic computer skills for office jobs, data entry, or government exam preparation. Ideal for beginners with zero computer knowledge."
+        },
+        {
+            id: 2, name: "Certificate in Computer Application", price: "₹4,000", duration: "3 Months", category: "certificate", tag: "Certificate", students: "500+", rating: "4.9",
+            img: "https://gregarious-klepon-be0467.netlify.app/assets/images/cca.webp",
+            shortDesc: "Computer fundamentals, OS, Internet, and Office tools.",
+            syllabus: [
+                "Introduction to Computers & Hardware basics",
+                "Windows OS — File management, settings, control panel",
+                "MS Word — Letters, Reports, Tables",
+                "MS Excel — Basic formulas, SUM, AVERAGE, COUNT",
+                "MS PowerPoint — Slide design, animations",
+                "Internet browsing, Email, Downloading"
+            ],
+            whoJoin: "School students, housewives, and working professionals who want to gain basic computer knowledge quickly."
+        },
+        {
+            id: 3, name: "Certificate in Advance Excel", price: "₹5,000", duration: "4 Months", category: "certificate", tag: "Certificate", students: "1500+", rating: "4.7",
+            img: "https://gregarious-klepon-be0467.netlify.app/assets/images/excel.webp",
+            shortDesc: "Pivot tables, Macros, VBA, Advanced Formulas & Functions.",
+            syllabus: [
+                "Advanced Formulas — VLOOKUP, HLOOKUP, IF, INDEX-MATCH",
+                "Pivot Tables & Pivot Charts for data analysis",
+                "Data Validation & Conditional Formatting",
+                "Macros Recording & VBA Introduction",
+                "What-If Analysis — Goal Seek, Scenario Manager",
+                "Dashboard Creation & Report generation",
+                "Text Functions, Date Functions, Array Formulas"
+            ],
+            whoJoin: "Accountants, data analysts, office staff, and anyone who works with large data sets and wants to become Excel expert."
+        },
+        {
+            id: 4, name: "Certificate in Financial Accounting", price: "₹6,000", duration: "4 Months", category: "certificate", tag: "Certificate", students: "400+", rating: "4.8",
+            img: "https://gregarious-klepon-be0467.netlify.app/assets/images/cfa.webp",
+            shortDesc: "Tally Prime, Busy, Marg, GST, TDS, Payroll management.",
+            syllabus: [
+                "Manual Accounting — Journal, Ledger, Trial Balance",
+                "Tally Prime — Company creation, Vouchers, Ledger",
+                "GST in Tally — GST Returns (GSTR-1, GSTR-3B)",
+                "TDS & TCS entries in Tally",
+                "Payroll Management — Salary, PF, ESI",
+                "Busy Accounting Software",
+                "Marg ERP basics"
+            ],
+            whoJoin: "Commerce students, aspiring accountants, and shop/business owners who want to manage their own accounts digitally."
+        },
+        {
+            id: 5, name: "Certificate in English Typing", price: "₹2,500", duration: "1 Month", category: "typing", tag: "Typing", students: "800+", rating: "4.6",
+            img: "https://gregarious-klepon-be0467.netlify.app/assets/images/TYPING1.webp",
+            shortDesc: "Fast typing, accuracy improvement, and data management skills.",
+            syllabus: [
+                "Keyboard layout & Finger positioning",
+                "Home row keys practice (ASDF JKL;)",
+                "Speed building exercises (daily drills)",
+                "Accuracy improvement techniques",
+                "Paragraph typing practice",
+                "Data entry speed tests"
+            ],
+            whoJoin: "Students preparing for typing tests in government exams, data entry operators, and anyone who wants to improve typing speed."
+        },
+        {
+            id: 6, name: "Certificate in Hindi Typing", price: "₹1,500", duration: "1 Month", category: "typing", tag: "Typing", students: "2000+", rating: "4.5",
+            img: "https://gregarious-klepon-be0467.netlify.app/assets/images/typing2.webp",
+            shortDesc: "Krutidev/Remington layout for government exam preparation.",
+            syllabus: [
+                "Hindi keyboard layout (Remington/Krutidev)",
+                "Character positioning & finger practice",
+                "Matra & joint characters typing",
+                "Speed building daily exercises",
+                "Government exam pattern typing tests",
+                "Accuracy improvement drills"
+            ],
+            whoJoin: "Students preparing for UPSSSC, SSC, and other government exams that require Hindi typing certification."
+        },
+        {
+            id: 7, name: "MS-Word (Advanced)", price: "₹2,000", duration: "2 Months", category: "certificate", tag: "Certificate", students: "300+", rating: "4.8",
+            img: "https://omcti.in/apprise/temp/upload/88842_3.jpg",
+            shortDesc: "Mail merge, formatting, templates, and professional document creation.",
+            syllabus: [
+                "Advanced formatting — Styles, Themes, Headers/Footers",
+                "Tables — Complex tables, calculations in tables",
+                "Mail Merge — Letters, envelopes, labels from Excel data",
+                "Templates — Resume, Invoice, Certificate creation",
+                "Track Changes & Comments for teamwork",
+                "Table of Contents, Index, References",
+                "Macro recording in Word"
+            ],
+            whoJoin: "Office staff, documentation professionals, and anyone who creates professional documents regularly."
+        },
+        {
+            id: 8, name: "Cyber Security (Basic)", price: "₹10,000", duration: "6 Months", category: "certificate", tag: "Certificate", students: "200+", rating: "4.9",
+            img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
+            shortDesc: "Ethical Hacking basics, Network Security, and threat analysis.",
+            syllabus: [
+                "Introduction to Cyber Security & Security threats",
+                "Networking basics — IP, DNS, TCP/IP, Ports",
+                "Encryption & Decryption techniques",
+                "Ethical Hacking concepts & methodologies",
+                "Kali Linux introduction & basic commands",
+                "Phishing, Malware, Virus analysis",
+                "Password security & Two-factor authentication",
+                "Social Engineering attacks & prevention"
+            ],
+            whoJoin: "Students interested in ethical hacking and cybersecurity career, IT professionals wanting security knowledge."
+        },
+        {
+            id: 9, name: "Computer Networking (Basic)", price: "₹12,000", duration: "6 Months", category: "hardware", tag: "Hardware", students: "250+", rating: "4.8",
+            img: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
+            shortDesc: "LAN/WAN setup, Routers, Switches, TCP/IP, CCNA basics.",
+            syllabus: [
+                "Networking fundamentals — OSI Model, TCP/IP",
+                "IP Addressing — IPv4, Subnetting, CIDR",
+                "LAN/WAN concepts & topologies",
+                "Router & Switch configuration basics",
+                "Cabling — Ethernet, Fiber optic, Crimping",
+                "Wireless networking — Wi-Fi setup & security",
+                "Network troubleshooting tools (Ping, Tracert, IPCONFIG)"
+            ],
+            whoJoin: "Students aspiring for network engineer roles, hardware professionals, and those preparing for CCNA certification."
+        },
+        {
+            id: 10, name: "DTP (Desktop Publishing)", price: "₹5,000", duration: "6 Months", category: "design", tag: "Design", students: "600+", rating: "4.7",
+            img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=250&fit=crop",
+            shortDesc: "PageMaker, CorelDraw for books, banners, and printing design.",
+            syllabus: [
+                "PageMaker — Page layout, Books, Newspapers",
+                "CorelDraw — Logo, Visiting card, Brochure design",
+                "Photo editing basics for print",
+                "Color theory & Typography for print",
+                "Banner, Poster, Pamphlet design",
+                "File preparation for printing (CMYK, DPI)"
+            ],
+            whoJoin: "Students who want to work in printing press, advertising agencies, or start their own design business."
+        },
+        {
+            id: 11, name: "Graphic Designing", price: "₹8,000", duration: "6 Months", category: "design", tag: "Design", students: "450+", rating: "4.9",
+            img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=250&fit=crop",
+            shortDesc: "Photoshop, CorelDraw, Illustrator — complete design mastery.",
+            syllabus: [
+                "Adobe Photoshop — Photo editing, Retouching, Manipulation",
+                "Adobe Illustrator — Vector graphics, Logo design",
+                "CorelDraw — Brochure, Flyers, Business cards",
+                "Color Theory, Typography & Composition",
+                "Social Media creatives & Ad banners",
+                "Brand Identity design — Logo, Color palette, Style guide",
+                "Portfolio creation & freelancing tips"
+            ],
+            whoJoin: "Creative individuals who want to become graphic designers, work in agencies, or start freelancing."
+        },
+        {
+            id: 12, name: "Canva Designing", price: "₹3,000", duration: "2 Months", category: "design", tag: "Design", students: "300+", rating: "4.8",
+            img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=250&fit=crop",
+            shortDesc: "Social Media posts, thumbnails, posters, and brand collaterals.",
+            syllabus: [
+                "Canva interface & tools overview",
+                "Social Media posts — Instagram, Facebook, LinkedIn",
+                "YouTube thumbnails & channel art",
+                "Poster, Banner, Flyer design",
+                "Presentation & Infographic creation",
+                "Logo & Brand kit in Canva",
+                "Video editing basics in Canva",
+                "Bulk create & scheduling"
+            ],
+            whoJoin: "Small business owners, content creators, social media managers, and beginners who want quick design skills."
+        },
+        {
+            id: 13, name: "Video Editing (Basic)", price: "₹9,000", duration: "3 Months", category: "design", tag: "Design", students: "200+", rating: "4.7",
+            img: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&h=250&fit=crop",
+            shortDesc: "Filmora, Premiere Pro basics, cuts, transitions, and effects.",
+            syllabus: [
+                "Video editing concepts & terminology",
+                "Wondershare Filmora — Complete course",
+                "Adobe Premiere Pro — Interface, Timeline, Tools",
+                "Cutting, Trimming, Splitting clips",
+                "Transitions & Effects application",
+                "Text & Title animations",
+                "Color correction & Audio editing",
+                "Export settings for YouTube, Instagram, WhatsApp"
+            ],
+            whoJoin: "YouTubers, social media creators, and students who want to start a career in video editing."
+        },
+        {
+            id: 14, name: "C Programming", price: "₹5,000", duration: "3 Months", category: "coding", tag: "Coding", students: "400+", rating: "4.8",
+            img: "https://images.unsplash.com/photo-1515879218367-8466d910auj7?w=400&h=250&fit=crop",
+            shortDesc: "Logic building, Arrays, Pointers, Structures, File handling.",
+            syllabus: [
+                "Introduction to Programming & C language basics",
+                "Variables, Data types, Operators",
+                "Control Structures — if-else, switch, loops",
+                "Functions — User-defined & Recursion",
+                "Arrays — 1D, 2D, String handling",
+                "Pointers — Concept, Array-pointer relationship",
+                "Structures & Unions",
+                "File handling — fopen, fread, fwrite",
+                "Dynamic memory allocation (malloc, calloc)"
+            ],
+            whoJoin: "Students who want to build strong programming foundation, BCA/B.Tech students, and competitive exam aspirants."
+        },
+        {
+            id: 15, name: "C++ Programming", price: "₹6,000", duration: "3 Months", category: "coding", tag: "Coding", students: "350+", rating: "4.8",
+            img: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=400&h=250&fit=crop",
+            shortDesc: "OOPs concepts, Classes, Objects, Inheritance, Polymorphism.",
+            syllabus: [
+                "C++ basics — Variables, I/O, Operators",
+                "Control structures & Functions",
+                "Arrays, Strings, Pointers",
+                "Object-Oriented Programming (OOP) concepts",
+                "Classes & Objects — Constructor, Destructor",
+                "Inheritance — Single, Multiple, Multilevel, Hierarchical",
+                "Polymorphism — Function overloading, Operator overloading",
+                "Virtual functions & Abstract classes",
+                "Templates & Exception handling"
+            ],
+            whoJoin: "Students who already know C and want to learn OOPs, BCA/B.Tech students, and placement preparation."
+        },
+        {
+            id: 16, name: "Python Programming", price: "₹8,000", duration: "4 Months", category: "coding", tag: "Coding", students: "500+", rating: "4.9",
+            img: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=250&fit=crop",
+            shortDesc: "Syntax, Django basics, Data Handling, and automation scripts.",
+            syllabus: [
+                "Python installation & basics — Variables, Data types",
+                "Control flow — if-else, loops, pass/break/continue",
+                "Functions, Modules & Packages",
+                "Lists, Tuples, Dictionaries, Sets",
+                "File handling — Read, Write, CSV, JSON",
+                "Object-Oriented Programming in Python",
+                "Regular Expressions & Error handling",
+                "Introduction to Django Web Framework",
+                "Automation scripts & mini projects"
+            ],
+            whoJoin: "Beginners who want to start programming, data science aspirants, and automation enthusiasts."
+        },
+        {
+            id: 17, name: "Java Programming", price: "₹9,000", duration: "4 Months", category: "coding", tag: "Coding", students: "400+", rating: "4.8",
+            img: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=400&h=250&fit=crop",
+            shortDesc: "Core Java, Swing, JDBC, Database connectivity, and GUI.",
+            syllabus: [
+                "Java setup — JDK, JVM, JRE, First program",
+                "Variables, Data types, Operators",
+                "Control structures & Arrays",
+                "OOPs — Classes, Objects, Inheritance, Polymorphism",
+                "Abstract classes & Interfaces",
+                "Exception handling & Multithreading",
+                "Collections Framework — ArrayList, HashMap, TreeSet",
+                "JDBC — MySQL database connectivity",
+                "Swing — GUI development (Calculator mini project)"
+            ],
+            whoJoin: "Students targeting software development jobs, B.Tech/BCA students, and those preparing for Java interviews."
+        },
+        {
+            id: 18, name: "Web Designing (HTML, CSS, JS)", price: "₹7,000", duration: "4 Months", category: "coding", tag: "Coding", students: "600+", rating: "4.9",
+            img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop",
+            shortDesc: "Responsive design, Bootstrap, jQuery, and modern layouts.",
+            syllabus: [
+                "HTML5 — Tags, Forms, Tables, Semantic elements",
+                "CSS3 — Selectors, Box model, Flexbox, Grid",
+                "Responsive Web Design — Media queries, Mobile-first",
+                "Bootstrap 5 — Grid system, Components, Utilities",
+                "JavaScript — Variables, Functions, DOM manipulation",
+                "jQuery — Selectors, Events, Animations",
+                "Form validation using JavaScript",
+                "Website hosting — Domain, Hosting, FTP upload",
+                "Live project — Complete responsive website"
+            ],
+            whoJoin: "Students who want to become frontend web designers, freelancers, and those interested in web development."
+        },
+        {
+            id: 19, name: "Web Development (PHP & MySQL)", price: "₹12,000", duration: "6 Months", category: "coding", tag: "Coding", students: "350+", rating: "4.8",
+            img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop",
+            shortDesc: "Backend logic, Database management, CMS, and live projects.",
+            syllabus: [
+                "HTML, CSS, JavaScript (recap)",
+                "PHP basics — Syntax, Variables, Operators, Loops",
+                "PHP Functions, Arrays, Superglobals ($_GET, $_POST)",
+                "Form handling & Server-side validation",
+                "MySQL — Database creation, Tables, CRUD operations",
+                "PHP-MySQL connectivity — INSERT, UPDATE, DELETE, SELECT",
+                "Session & Cookie management",
+                "File upload & download in PHP",
+                "Live project — Student Management System / E-commerce"
+            ],
+            whoJoin: "Students who want to become full-stack web developers, build dynamic websites, or work as PHP developers."
+        },
+        {
+            id: 20, name: "Computer Teacher Training (CTT)", price: "₹15,000", duration: "12 Months", category: "diploma", tag: "Diploma", students: "150+", rating: "4.9",
+            img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=250&fit=crop",
+            shortDesc: "Become a certified computer teacher with teaching methodology.",
+            syllabus: [
+                "Computer fundamentals & MS Office (Advanced)",
+                "Internet & Email mastery",
+                "DTP basics — CorelDraw, PageMaker",
+                "Web Designing — HTML, CSS basics",
+                "Tally & Accounting basics",
+                "Teaching methodology & Lesson planning",
+                "Classroom management & Student psychology",
+                "Practical teaching practice (internship)",
+                "Project work & Final examination"
+            ],
+            whoJoin: "Graduates who want to become computer teachers in schools, coaching centers, or government institutions."
+        },
+        {
+            id: 21, name: "CCC (NIELIT)", price: "₹2,000", duration: "3 Months", category: "government", tag: "Government", students: "3000+", rating: "4.8",
+            img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=250&fit=crop",
+            shortDesc: "Course on Computer Concepts — essential for government jobs.",
+            syllabus: [
+                "Introduction to Computer — Hardware, Software",
+                "Operating System — Windows 10/11",
+                "Word Processing — MS Word",
+                "Spreadsheet — MS Excel",
+                "Presentation — MS PowerPoint",
+                "Internet & Web Browser",
+                "Email & Social Media",
+                "Digital Financial Services — UPI, Net Banking",
+                "Previous year paper practice & Mock tests"
+            ],
+            whoJoin: "Anyone appearing for CCC exam conducted by NIELIT — mandatory for many government jobs in UP and India."
+        },
+        {
+            id: 22, name: "O Level (Foundation)", price: "₹20,000", duration: "12 Months", category: "government", tag: "Government", students: "500+", rating: "4.9",
+            img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop",
+            shortDesc: "DOEACC equivalent foundation course for government eligibility.",
+            syllabus: [
+                "Paper 1 — IT Tools & Applications (MS Office, Internet)",
+                "Paper 2 — Business Systems (Business communication, Accounting)",
+                "Paper 3 — Programming & Problem Solving (C language)",
+                "Paper 4 — HTML & Web Design basics",
+                "Practical — Lab exercises & Project work",
+                "Previous year solved papers",
+                "Theory & Practical exam preparation"
+            ],
+            whoJoin: "Students who want DOEACC O Level certification for government job eligibility and IT career foundation."
+        },
+        {
+            id: 23, name: "Computer Hardware & Maintenance", price: "₹10,000", duration: "6 Months", category: "hardware", tag: "Hardware", students: "300+", rating: "4.7",
+            img: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=250&fit=crop",
+            shortDesc: "Assembling, Troubleshooting, Parts identification, and repair.",
+            syllabus: [
+                "Computer components — CPU, RAM, HDD, SSD, Motherboard",
+                "PC Assembling — Step by step build",
+                "BIOS/UEFI settings & Configuration",
+                "Operating System installation — Windows 10/11, Linux",
+                "Software installation — Drivers, Antivirus, Office",
+                "Troubleshooting — Hardware & Software issues",
+                "Peripheral devices — Printer, Scanner setup",
+                "Preventive maintenance & Data backup"
+            ],
+            whoJoin: "Students who want to become hardware engineers, open their own computer repair shop, or work in IT support."
+        },
+        {
+            id: 24, name: "Laptop / Desktop Repairing", price: "₹15,000", duration: "6 Months", category: "hardware", tag: "Hardware", students: "150+", rating: "4.8",
+            img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=250&fit=crop",
+            shortDesc: "Chip level repair, Screen replacement, Battery, and motherboard.",
+            syllabus: [
+                "Laptop internal architecture & Components",
+                "Motherboard components & Chip level understanding",
+                "SMD components — Resistors, Capacitors, ICs",
+                "Soldering & Desoldering techniques",
+                "Screen replacement, Keyboard replacement",
+                "Battery & Power IC problems",
+                "BIOS programming & Firmware update",
+                "Diagnostic tools — Multimeter, DC power supply",
+                "Live repair practice on faulty boards"
+            ],
+            whoJoin: "Students who want to become expert laptop technicians, start their own repair center, or work in service centers."
+        },
+        {
+            id: 25, name: "Diploma in Computer Applications (DCA - 12 Month)", price: "₹6,000", duration: "12 Months", category: "diploma", tag: "Diploma", students: "1200+", rating: "4.9",
+            img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop",
+            shortDesc: "Complete computer fundamentals, Office, Internet, and OS.",
+            syllabus: [
+                "Computer Fundamentals & Operating System",
+                "MS Word — Advanced document creation",
+                "MS Excel — Formulas, Charts, Data analysis",
+                "MS PowerPoint — Professional presentations",
+                "MS Access — Database management",
+                "Internet & Email mastery",
+                "Hindi & English Typing (Speed building)",
+                "Tally Prime basics",
+                "Project work & Practical exam"
+            ],
+            whoJoin: "Students looking for a comprehensive 1-year diploma for government and private job readiness."
+        },
+        {
+            id: 26, name: "Diploma in Office Automation (DOA)", price: "₹5,000", duration: "12 Months", category: "diploma", tag: "Diploma", students: "600+", rating: "4.8",
+            img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+            shortDesc: "Advanced office skills, documentation, and corporate readiness.",
+            syllabus: [
+                "Computer fundamentals & Windows",
+                "MS Office — Word, Excel, PowerPoint, Access",
+                "Advance Excel — VLOOKUP, Pivot Tables",
+                "Tally Prime — Basic accounting",
+                "Internet, Email, Online tools (Google Workspace)",
+                "Typing — Hindi & English",
+                "Document drafting — Official letters, Notices, Reports",
+                "Office management & Filing systems",
+                "Personality development & Interview preparation"
+            ],
+            whoJoin: "Students who want to work as office assistants, data entry operators, or admin staff in corporate offices."
+        },
+        {
+            id: 27, name: "Diploma in Information Technology (DIT)", price: "₹10,000", duration: "12 Months", category: "diploma", tag: "Diploma", students: "400+", rating: "4.9",
+            img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop",
+            shortDesc: "Programming, Networking, Database, and system administration.",
+            syllabus: [
+                "Computer fundamentals & Operating Systems",
+                "C Programming — Logic building & Problem solving",
+                "HTML, CSS, JavaScript — Web designing basics",
+                "Database management — MySQL, SQL queries",
+                "Networking fundamentals — TCP/IP, LAN/WAN",
+                "Linux basics — Commands, File system",
+                "Python programming — Basics to automation",
+                "Cyber Security basics",
+                "Project work & Final exam"
+            ],
+            whoJoin: "Students who want a strong IT foundation covering multiple domains — programming, networking, and database."
+        },
+        {
+            id: 28, name: "Advance Diploma in Computer App (ADCA)", price: "₹8,000", duration: "18 Months", category: "diploma", tag: "Diploma", students: "800+", rating: "4.9",
+            img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=250&fit=crop",
+            shortDesc: "Deep dive into software, hardware, and professional skills.",
+            syllabus: [
+                "Semester 1 — Computer fundamentals, MS Office, Typing",
+                "Semester 2 — Advance Excel, Tally Prime, DTP",
+                "Semester 3 — Web Designing (HTML, CSS, JS)",
+                "Semester 4 — Programming (C/C++ or Python)",
+                "Semester 5 — Hardware & Networking basics",
+                "Semester 6 — Project work, Internship, Interview prep",
+                "Personality development & Communication skills",
+                "Resume building & Job placement assistance"
+            ],
+            whoJoin: "Students who want the most comprehensive computer course covering office, design, coding, and hardware — best for complete IT career preparation."
+        }
+    ];
+
+    // ========================================
+    // GENERATE COURSE CARDS
+    // ========================================
+    const coursesGrid = document.getElementById('coursesGrid');
+
+    coursesData.forEach(course => {
+        const card = document.createElement('div');
+        card.className = 'course-card reveal';
+        card.setAttribute('data-category', course.category);
+        card.innerHTML = `
+            <div class="card-img">
+                <span class="price-tag">${course.price}</span>
+                <img src="${course.img}" alt="${course.name}" loading="lazy">
+            </div>
+            <div class="card-body">
+                <div class="card-tags">
+                    <span class="tag">${course.tag}</span>
+                    <span class="tag">${course.duration}</span>
+                </div>
+                <h3 class="course-title">${course.name}</h3>
+                <div class="course-meta">
+                    <span><i class="fas fa-user"></i> ${course.students}</span>
+                    <span class="rating"><i class="fas fa-star"></i> ${course.rating}</span>
+                </div>
+                <p class="course-desc">${course.shortDesc}</p>
+                <div class="course-btn">
+                    <button class="btn btn-primary" style="width:100%" onclick="openCourseModal(${course.id})">View Details</button>
+                </div>
+            </div>
+        `;
+        coursesGrid.appendChild(card);
+    });
+
+    // ========================================
+    // COURSE DETAIL MODAL LOGIC
+    // ========================================
+    const courseModal = document.getElementById('courseModal');
+    const modalClose = document.getElementById('modalClose');
+    let currentCourseId = null;
+
+    function openCourseModal(courseId) {
+        const course = coursesData.find(c => c.id === courseId);
+        if (!course) return;
+
+        currentCourseId = courseId;
+
+        // Title
+        document.getElementById('modalTitle').textContent = course.name;
+
+        // Badges
+        document.getElementById('modalBadges').innerHTML = `
+            <span class="modal-badge"><i class="fas fa-clock"></i> ${course.duration}</span>
+            <span class="modal-badge"><i class="fas fa-rupee-sign"></i> ${course.price}</span>
+            <span class="modal-badge"><i class="fas fa-star"></i> ${course.rating}</span>
+            <span class="modal-badge"><i class="fas fa-users"></i> ${course.students} Students</span>
+        `;
+
+        // Info Grid
+        document.getElementById('modalInfoGrid').innerHTML = `
+            <div class="modal-info-box">
+                <i class="fas fa-clock"></i>
+                <div class="label">Duration</div>
+                <div class="value">${course.duration}</div>
+            </div>
+            <div class="modal-info-box">
+                <i class="fas fa-rupee-sign"></i>
+                <div class="label">Fee</div>
+                <div class="value">${course.price}</div>
+            </div>
+            <div class="modal-info-box">
+                <i class="fas fa-certificate"></i>
+                <div class="label">Certificate</div>
+                <div class="value">Yes</div>
+            </div>
+        `;
+
+        // Syllabus
+        document.getElementById('modalSyllabus').innerHTML = course.syllabus.map(item =>
+            `<li><i class="fas fa-check-circle"></i> ${item}</li>`
+        ).join('');
+
+        // Who should join
+        document.getElementById('modalWhoJoin').textContent = course.whoJoin;
+
+        // Update WhatsApp link
+        document.getElementById('eqWhatsApp').href = `https://wa.me/918766374979?text=${encodeURIComponent('Hi, I want to enquire about ' + course.name + ' (' + course.duration + ', ' + course.price + ')')}`;
+
+        // Reset form
+        document.getElementById('enquiryForm').reset();
+        document.querySelectorAll('.form-error').forEach(e => e.classList.remove('show'));
+
+        // Open modal
+        courseModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCourseModal() {
+        courseModal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    modalClose.addEventListener('click', closeCourseModal);
+    courseModal.addEventListener('click', (e) => {
+        if (e.target === courseModal) closeCourseModal();
+    });
+
+    // ========================================
+    // ENQUIRY FORM → WHATSAPP
+    // ========================================
+    document.getElementById('enquiryForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('eqName').value.trim();
+        const phone = document.getElementById('eqPhone').value.trim();
+        const email = document.getElementById('eqEmail').value.trim();
+
+        // Validation
+        let valid = true;
+
+        if (name.length < 2) {
+            document.getElementById('nameError').classList.add('show');
+            valid = false;
+        } else {
+            document.getElementById('nameError').classList.remove('show');
+        }
+
+        if (!/^[0-9]{10}$/.test(phone)) {
+            document.getElementById('phoneError').classList.add('show');
+            valid = false;
+        } else {
+            document.getElementById('phoneError').classList.remove('show');
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            document.getElementById('emailError').classList.add('show');
+            valid = false;
+        } else {
+            document.getElementById('emailError').classList.remove('show');
+        }
+
+        if (!valid) return;
+
+        // Get course info
+        const course = coursesData.find(c => c.id === currentCourseId);
+
+        // Build WhatsApp message
+        const message = `*SD CC — New Course Enquiry*%0A%0A` +
+            `📋 *Course:* ${course ? course.name : 'N/A'}%0A` +
+            `⏱️ *Duration:* ${course ? course.duration : 'N/A'}%0A` +
+            `💰 *Fee:* ${course ? course.price : 'N/A'}%0A%0A` +
+            `👤 *Student Details:*%0A` +
+            `• Name: ${name}%0A` +
+            `• Phone: ${phone}%0A` +
+            `• Email: ${email}%0A%0A` +
+            `Please share more details about this course. Thank you!`;
+
+        // Open WhatsApp
+        window.open(`https://wa.me/918766374979?text=${message}`, '_blank');
+
+        // Show success toast
+        showToast('✅ Redirecting to WhatsApp...');
+
+        // Close modal after delay
+        setTimeout(() => closeCourseModal(), 1500);
+    });
+
+    // ========================================
+    // OTHER JS (Popup, Menu, Scroll, Filter, etc.)
+    // ========================================
+
+    // Logo Popup
+    const popup = document.getElementById('logoPopup');
+    document.getElementById('closePopupX').addEventListener('click', () => popup.classList.add('hide-popup'));
+    document.getElementById('closePopupMain').addEventListener('click', () => popup.classList.add('hide-popup'));
+    popup.addEventListener('click', (e) => { if (e.target === popup) popup.classList.add('hide-popup'); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { popup.classList.add('hide-popup'); closeCourseModal(); }});
+
+    // Mobile Menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+        });
+    });
+
+    // Header scroll
+    const header = document.getElementById('mainHeader');
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+        backToTop.classList.toggle('visible', window.scrollY > 600);
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Scroll Reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+        revealElements.forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 120) el.classList.add('active');
+        });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // Counter
+    const counters = document.querySelectorAll('.counter');
+    let hasAnimated = false;
+    const animateCounters = () => {
+        const statsSection = document.querySelector('.stats-section');
+        if (!statsSection) return;
+        if (statsSection.getBoundingClientRect().top < window.innerHeight - 100 && !hasAnimated) {
+            hasAnimated = true;
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const step = target / 125;
+                const update = () => {
+                    const c = +counter.innerText;
+                    if (c < target) { counter.innerText = Math.ceil(c + step); requestAnimationFrame(update); }
+                    else { counter.innerText = target + "+"; }
+                };
+                update();
+            });
+        }
+    };
+    window.addEventListener('scroll', animateCounters);
+
+    // Course Filter
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            filterTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const filter = tab.getAttribute('data-filter');
+            document.querySelectorAll('.course-card').forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.classList.remove('hidden');
+                    card.classList.remove('active');
+                    setTimeout(() => card.classList.add('active'), 50);
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+
+    // Toast
+    function showToast(msg) {
+        const toast = document.getElementById('toast');
+        toast.textContent = msg;
+        toast.classList.remove('error');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    // Newsletter
+    document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        showToast('✅ Subscribed successfully! Thank you.');
+        document.getElementById('newsletterEmail').value = '';
+    });
+    </script>
+</body>
+</html>
